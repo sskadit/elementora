@@ -1,0 +1,49 @@
+{% extends "base.html" %} 
+{% block content %}
+<div class="ui hidden section divider"></div>
+<div class="row">
+    <h1 class="ui huge header">
+                Data From Phone
+              </h1>
+</div>
+<div class="ui divider"></div>
+<div class="row">
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Text</th>
+                <th>Mms</th>
+                <th>Sender</th>
+                <th>Number</th>
+                <th>DateTime</th>
+                <th>TimeStamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for q in query %}
+            <tr>
+                <td>{{q.id_generated}}</td>
+                <td>{{q.text}}</td>
+                <td>{{q.mms}}</td>
+                <td>{{q.sender}}</td>
+                <td>{{q.number}}</td>
+                <td>{{q.datetime}}</td>
+                <td>{{q.timestamp_client}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Id</th>
+                <th>Text</th>
+                <th>MMS</th>
+                <th>Sender</th>
+                <th>Number</th>
+                <th>DateTime</th>
+                <th>TimeStamp</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+{% endblock content %}
